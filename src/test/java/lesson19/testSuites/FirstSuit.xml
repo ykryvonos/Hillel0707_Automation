@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "firstSuite">
+
+    <test name = "exampleFirst">
+        <parameter name = "username" value="lexa@gmail.com"/>
+        <parameter name = "password" value="1111"/>
+        <classes>
+            <class name = "lesson19.OurFirstTest"/>
+        </classes>
+    </test>
+
+    <test name = "exampleSecond">
+        <classes>
+            <class name = "lesson19.OurSecondTest"/>
+        </classes>
+    </test>
+</suite>

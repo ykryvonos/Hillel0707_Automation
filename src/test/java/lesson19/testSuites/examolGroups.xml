@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "examolGroups">
+
+    <listeners>
+        <listener class-name="Listeners.studyProjectListener.ProjectListener"></listener>
+    </listeners>
+    <test name = "runRegression">
+        <parameter name = "username" value="lexa@gmail.com"/>
+        <parameter name = "password" value="1111"/>
+
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="lesson19.OurFirstTest"/>
+            <class name="lesson19.OurSecondTest"/>
+        </classes>
+    </test>
+</suite>
