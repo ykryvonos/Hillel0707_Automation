@@ -40,13 +40,14 @@ public class checkBasket {
         notebook.click();
 
         WebElement firstProduct = wait
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//section[contains(@class,'catalog')]//span[contains(@class, 'title')][1]")));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class, 'catalog')][1]//span[@class='goods-tile__title']")));
         String expectedTitle = firstProduct.getAttribute("innerText").trim();
 
-        WebElement btnGoodsBasket = driver.findElement(By.xpath("//app-buy-button[1]")); // //div[contains(@class,'price--red')][1]
+        WebElement btnGoodsBasket = driver.findElement(By.xpath("//app-buy-button[1]"));
         btnGoodsBasket.click();
 
-        WebElement countBasket = driver.findElement(By.xpath("//span[contains(@class,'counter')]"));
+        WebElement countBasket = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(@class,'counter')]")));
         String countOfGoods = countBasket.getAttribute("innerText").trim();
         assertEquals(countOfGoods, "1");
 
