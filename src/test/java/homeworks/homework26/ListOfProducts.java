@@ -34,7 +34,6 @@ public class ListOfProducts {
 
     @Test
     public void rozetkaTest() throws IOException {
-        //       By products = By.xpath("//li[contains(@class, 'catalog')]");
 
         WebElement firstLinkList = driver
                 .findElement(By.xpath("//ul[contains(@class,'menu-categories_')]/li[1]/a"));
