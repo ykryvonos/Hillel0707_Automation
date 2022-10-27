@@ -35,6 +35,10 @@ public class ListOfProducts {
     @Test
     public void rozetkaTest() throws IOException {
 
+        String productTitle = "//span[@class='goods-tile__title']";
+        String productPrice = "//span[@class='goods-tile__price-value']";
+        String fileName = "rozetkaTest";
+
         WebElement firstLinkList = driver
                 .findElement(By.xpath("//ul[contains(@class,'menu-categories_')]/li[1]/a"));
         firstLinkList.click();
@@ -46,30 +50,35 @@ public class ListOfProducts {
         WebElement btnList = wait
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'c94-1')]")));
 
-        List<WebElement> listProductTitle = driver.findElements(By.xpath("//span[@class='goods-tile__title']"));
+        productsListInFile(productTitle, productPrice, fileName);
+    }
 
-        List<WebElement> listProductPrice = driver.findElements(By.xpath("//span[@class='goods-tile__price-value']"));
+    @AfterTest
+    public void after() {
+        driver.quit();
+    }
+
+    public void productsListInFile(String key, String value, String fileName) throws IOException {
+        List<WebElement> listProductTitle = driver.findElements(By.xpath(key));
+
+        List<WebElement> listProductPrice = driver.findElements(By.xpath(value));
 
         LinkedHashMap<String, String> listOfProducts = new LinkedHashMap<String, String>();
 
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < listProductTitle.size(); i++) {
+
             String title = listProductTitle.get(i).getAttribute("innerText").replace(" ", " ");
             String price = listProductPrice.get(i).getAttribute("innerText").replace(" ", " ");
 
             listOfProducts.put(title, price);
         }
 
-        FileWriter fileWriter = new FileWriter("rozetkaTest");
+        FileWriter fileWriter = new FileWriter(fileName);
 
         for (Map.Entry<String, String> entry : listOfProducts.entrySet()) {
             fileWriter.write(entry.getKey() + " - " + entry.getValue() + "\n");
         }
         fileWriter.close();
-    }
-
-    @AfterTest
-    public void after() {
-        driver.quit();
     }
 }
 //    Перейти на https://rozetka.com.ua/
