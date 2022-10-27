@@ -54,7 +54,7 @@ public class ListOfProducts {
 
         for (int i = 0; i < 60; i++) {
             String title = listProductTitle.get(i).getAttribute("innerText").replace(" ", " ");
-            String price = listProductPrice.get(i).getAttribute("textContent").replace(" ", " ");
+            String price = listProductPrice.get(i).getAttribute("innerText").replace(" ", " ");
 
             listOfProducts.put(title, price);
         }
