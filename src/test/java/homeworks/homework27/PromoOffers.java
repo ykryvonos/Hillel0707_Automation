@@ -27,7 +27,7 @@ public class PromoOffers {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://rozetka.com.ua/");
+        driver.get("https://rozetka.com.ua/ua/");
     }
 
     @Test
