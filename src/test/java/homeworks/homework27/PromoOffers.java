@@ -33,6 +33,7 @@ public class PromoOffers {
     @Test
     public void promotions() throws InterruptedException {
         loadPage();
+        scroll();
 
         List<WebElement> promoOffers = driver.findElements(By.xpath("//h2[contains(text(), 'Акційні')]/..//li"));
         Assert.assertEquals(promoOffers.size(), 6);
