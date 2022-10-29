@@ -33,7 +33,7 @@ public class ListOfProducts {
     }
 
     @Test
-    public void rozetkaTest() throws IOException {
+    public void productsInFile() throws IOException {
 
         String productTitle = "//span[@class='goods-tile__title']";
         String productPrice = "//span[@class='goods-tile__price-value']";
