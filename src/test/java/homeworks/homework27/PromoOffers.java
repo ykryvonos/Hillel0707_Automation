@@ -48,8 +48,7 @@ public class PromoOffers {
 
         Assert.assertEquals(actualPrice, firstPrice, "The price does not match");
 
-        WebElement mainPage = driver.findElement(By.xpath("//a[@class='header__logo']"));
-        mainPage.click();
+        mainPage();
         loadPage();
         String url = driver.getCurrentUrl();
         Assert.assertEquals(url, "https://rozetka.com.ua/ua/", "The URL does not match");
@@ -63,14 +62,20 @@ public class PromoOffers {
     public void after() {
         driver.quit();
     }
-    public void loadPage(){
+
+    public void loadPage() {
         WebElement btnList = wait
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'c94-1')]")));
     }
 
-    public void scroll(){
+    public void scroll() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scroll(0, 1500)");
+    }
+
+    public void mainPage() {
+        WebElement mainPage = driver.findElement(By.xpath("//a[@class='header__logo']"));
+        mainPage.click();
     }
 }
 
