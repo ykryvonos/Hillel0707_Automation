@@ -28,7 +28,7 @@ public class FirstTestWithPageObject {
     public void testWithPageObject(){
         new MainPageLogic(driver, wait).typeTextToSearchInput("Mac").clickFindBtn();
 
-        SearchPageLogic searchPageLogic = new SearchPageLogic(driver, wait);
+        SearchPageLogic_27 searchPageLogic = new SearchPageLogic_27(driver, wait);
         String tittleFromSearchPage = searchPageLogic.firstProductTittleText();
         searchPageLogic.clickOnFirstProduct();
 

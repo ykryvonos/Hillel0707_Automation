@@ -11,7 +11,7 @@ public class SoftAssert {
         Assert.assertEquals(5,5);
         System.out.println("hard assert success");
         Assert.assertTrue("Hello".equals("hello"));
-        System.out.println("*** Test case execute ***");
+        System.out.println("*** кпыре нрвено Test case execute ***");
     }
 
     @Test
@@ -21,7 +21,7 @@ public class SoftAssert {
         softAssert.assertEquals(5,5);
         System.out.println("hard assert success");
         softAssert.assertTrue("Hello".equals("hello"));
-        System.out.println("*** Test case execute ***");
+        System.out.println("***Test case execute ***");
         softAssert.assertAll();
     }
 }

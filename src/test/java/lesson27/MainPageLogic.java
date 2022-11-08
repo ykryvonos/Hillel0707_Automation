@@ -30,8 +30,8 @@ public class MainPageLogic {
         return this;
     }
 
-    public SearchPageLogic clickFindBtn(){
+    public SearchPageLogic_27 clickFindBtn(){
         driver.findElement(findBtn).click();
-        return  new SearchPageLogic(driver, wait);
+        return  new SearchPageLogic_27(driver, wait);
     }
 }
