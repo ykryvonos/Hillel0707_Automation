@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 public class CategoryPageLogic {
 
@@ -14,6 +15,6 @@ public class CategoryPageLogic {
     public ProductPageLogic clickOnCategory(SelenideElement category){
         category.shouldBe(Condition.visible);
         category.click();
-        return  Selenide.page(ProductPageLogic.class);
+        return  page(ProductPageLogic.class);
     }
 }
