@@ -13,9 +13,9 @@ public class MainPageLogic extends MainPageElement{
         return this;
     }
 
-    public CategoryPageLogic clickOnCategory(SelenideElement category){
+    public CategoryPageLogic_cw clickOnCategory(SelenideElement category){
         category.shouldBe(Condition.visible);
         category.click();
-        return  page(CategoryPageLogic.class);
+        return  page(CategoryPageLogic_cw.class);
     }
 }

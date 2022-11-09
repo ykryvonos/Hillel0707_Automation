@@ -21,7 +21,7 @@ public class SelenideTestWithPageObject {
         mainPageLogic
                 .checkCategoryQuantity(16)
                 .clickOnCategory(mainPageLogic.compAndLaptopCategory)
-                .clickOnCategory(new CategoryPageLogic().laptop)
+                .clickOnCategory(new CategoryPageLogic_cw().laptop)
                 .checkProductQuantity(60);
 
     }

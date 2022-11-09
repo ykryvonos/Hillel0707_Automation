@@ -1,17 +1,17 @@
 package lesson29.po_selenide;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import lesson27.SearchPageLogic_27;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
-public class CategoryPageLogic extends CategoryPageElements {
+public class CategoryPageLogic_cw extends CategoryPageElements {
 
-    public lesson29.po_selenide.SearchPageLogic clickOnCategory(SelenideElement category){
+    public SearchPageLogic_cw clickOnCategory(SelenideElement category){
         category.shouldBe(Condition.visible);
         category.click();
-        return  page(SearchPageLogic.class);
+        return  Selenide.page(SearchPageLogic_cw.class);
     }
 }
