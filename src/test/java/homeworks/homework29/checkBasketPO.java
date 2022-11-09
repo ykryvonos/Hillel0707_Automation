@@ -25,16 +25,13 @@ public class checkBasketPO {
                 .clickOnCategory(mainPageLogic.compAndLaptopCategory)
                 .clickOnCategory(new CategoryPageLogic().laptop)
                 .addToBasket(new ProductPageLogic().firstProductBasket)
-                .firstProductTitle(new ProductPageLogic().firstProduct)
                 .checkCountBasket("1")
+                .firstProductTitle(new ProductPageLogic().firstProductTitle)
                 .openBasket(new ProductPageLogic().basket)
                 .productTitle(new BasketPageLogic().titleOfGoods);
-//        Assert.assertEquals(page(BasketPageLogic.));
-
+        Assert.assertEquals(BasketPageLogic.actualProductTitle, ProductPageLogic.expectedProductTitle);
     }
 }
-
-
 
 //    Написать тест с использованием Selenide и PageObject
 //    Открыть https://rozetka.com.ua/

@@ -4,20 +4,22 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.security.PublicKey;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class ProductPageLogic {
-
-    SelenideElement firstProduct = $(By.xpath("//li[contains(@class, 'catalog')][1]//span[@class='goods-tile__title']"));
+    public static String expectedProductTitle;
+    SelenideElement firstProductTitle = $(By.xpath("//li[contains(@class, 'catalog')][1]//span[@class='goods-tile__title']"));
     SelenideElement firstProductBasket = $(By.xpath("//app-buy-button[1]"));
     SelenideElement countBasket = $(By.xpath("//span[contains(@class,'counter')]"));
     SelenideElement basket = $(By.xpath("//li[contains(@class, 'cart')]"));
 
 
-    public ProductPageLogic firstProductTitle(SelenideElement firstProduct) {
-        String firstProductTitle = firstProduct.getAttribute("innerText");
-        return this;
+    public ProductPageLogic firstProductTitle(SelenideElement title) {
+        expectedProductTitle = title.getAttribute("innerText");
+        return page(ProductPageLogic.class);
     }
 
     public ProductPageLogic addToBasket(SelenideElement productBasket) {
